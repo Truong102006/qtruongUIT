@@ -1,0 +1,30 @@
+//de bai kiem tra va dem so phan tu la so nguyen to co trong mang
+
+#include<iostream>
+using namespace std;
+int main(){
+   int n;
+   cin>>n;
+   int a[n];
+   
+   int dem=0;
+   for(int i=0 ;i<n;i++){
+      
+      cin>>a[i];
+   }
+   for(int i=0;i<n;i++){
+      int count=0; //sau khi thuc hien vong lap ben duoi thi bien count
+      // luon duoc tra ve 0 truoc khi thuc hien vong lap tiep theo
+      for(int x=2;x*x<=a[i];x++){
+         if(a[i]%x==0){
+            count++;
+            break; //thoat vong lap lap tuc ngay khi co uoc cua a[i]
+         }
+      }
+      if(count==0){
+         dem++; //count==0 chi khi a[i] la so ngto
+      }
+   }
+     cout<<dem;
+     return 0;
+   }
