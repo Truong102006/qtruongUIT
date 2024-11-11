@@ -1,0 +1,28 @@
+count sum of even divisor of n
+
+#include<iostream>
+using namespace std;
+int Input();
+int sum_even_divisor(int n);
+int main(){
+   int n;
+   n=Input();
+   cout<<sum_even_divisor(n);
+}
+int sum_even_divisor(int n){
+   int count=0;
+   for(int i=1;i<=n;i++){
+      if(n%i==0&&i%2==0){
+         count+=i;
+      }
+      else
+      count=-1;
+   }
+   return count;
+}
+int Input()
+{
+   int n;
+   cin>>n;
+   return n;
+}
