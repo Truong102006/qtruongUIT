@@ -1,0 +1,22 @@
+calculate the total by function
+
+
+
+
+#include<iostream>
+using namespace std;
+long tong(int n);
+int main(){
+   cout<<"Nhap vao so nguyen n: ";
+   int n;
+   cin>>n;
+   long kq=tong(n);
+   cout<<"Tong: "<<kq<<endl;
+}
+long tong(int n){
+   long s=0;
+   for(int i=0;i<=n;i++){
+      s+=i;
+   }
+   return s;
+}
