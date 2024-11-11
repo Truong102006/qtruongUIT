@@ -1,0 +1,33 @@
+Write a programe that enter your full name, math point, liturature point of a student. Count average score and cout result
+
+
+#include<iostream>
+using namespace std;
+#include<string>
+float toan,van;
+float dtb;
+string str;
+void nhap();
+void xuly();
+void xuat();
+int main(){
+   nhap();
+   xuly();
+   xuat();
+}
+void nhap(){
+   cout<<"Nhap ho va ten: ";
+   getline(cin,str);
+   cout<<"Nhap diem toan: ";
+   cin>>toan;
+   cout<<"Nhap diem van: ";
+   cin>>van;
+}
+void xuly(){
+   dtb=((float)toan+van)/2.0;
+}
+void xuat(){
+   cout<<"Ho va Ten: ";
+   cout<<str<<endl;
+   cout<<"Diem trung binh: "<<dtb;
+}
