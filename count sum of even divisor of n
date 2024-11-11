@@ -2,7 +2,7 @@ count sum of even divisor of n
 
 #include<iostream>
 using namespace std;
-int Input();
+int Input();//input khong can tham so dau vao, chi can gia tri return
 int sum_even_divisor(int n);
 int main(){
    int n;
