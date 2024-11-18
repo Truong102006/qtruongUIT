@@ -1,0 +1,21 @@
+in ra màn hình số lớn nhất và số lớn thứ 2 trong mảng nhập vào 
+#include<iostream>
+using namespace std;
+#include<set>
+int main(){
+    int n;
+    int a[100];
+    set<int>s;
+    cin>>n; //Nhap so luong ptu cua mang
+    for(int i=0;i<n;i++){ //Nhap tung phan tu cua mang va sap xep vao set
+        int x;
+        cin>>x;
+        s.insert(x);
+    }
+    auto it=s.rbegin(); //gan phan tu cui cung of set vao bien it
+    int max1=*it; //tro den phan tu lon nhat in set va gan vao max1
+    ++it; // tang len thanh phan tu lon thu 2 of mang
+    int max2=*it; //tuong tu dong 15
+    cout<<max1<<" "<<max2;
+    return 0;
+}
