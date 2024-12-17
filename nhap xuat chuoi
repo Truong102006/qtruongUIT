@@ -1,4 +1,4 @@
-#Viết chương trình nhập vào chuỗi ký tự. Nếu chuỗi chứa số thì xuất ra màn hình thông báo chuỗi đã nhập vào không hợp lệ. Nếu chuỗi đã nhập hợp lệ thì xuất chuỗi ra màn hình.
+//Viết chương trình nhập vào chuỗi ký tự. Nếu chuỗi chứa số thì xuất ra màn hình thông báo chuỗi đã nhập vào không hợp lệ. Nếu chuỗi đã nhập hợp lệ thì xuất chuỗi ra màn hình.
 
 #include <iostream>
 #include <string.h>
