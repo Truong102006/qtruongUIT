@@ -1,0 +1,59 @@
+//Viết chương trình nhập chuỗi ký tự. Nếu chuỗi nhập vào là chuỗi rỗng, chương trình in ra thông báo “Chuoi rong.”.
+//Ngược lại, chương trình đếm số lần xuất hiện của từng ký tự trong chuỗi.
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+#define MAX 300
+
+void DemKyTu(char s[]);
+int myStrcmp(char s1[MAX], char s2[MAX]);
+int myStrlen(char s[], int k);
+
+int main()
+{
+	char s[MAX];
+	//gets(s);	//Nhap chuoi s	
+	cin.getline(s,MAX);
+	if (myStrcmp(s, "") == 0)
+		cout << "Chuoi rong." << endl;
+	else
+		DemKyTu(s);
+
+	return 0;
+}
+
+int myStrcmp(char s1[MAX], char s2[MAX]) {
+    int i = 0;
+    while (s1[i] != '\0' && s2[i] != '\0') {
+        if (s1[i] != s2[i]) {
+            return 1;
+        }
+        i++;
+    }
+    return (s1[i] == s2[i]) ? 0 : 1;
+}
+
+int myStrlen(char s[], int k) {
+    while (s[k] != '\0') {
+        k++;
+    }
+    return k;
+}
+
+void DemKyTu(char s[]) {
+    int freq[256] = {0};
+    bool appeared[256] = {false};
+    int k = myStrlen(s,0);
+    for (int i = 0; i < k; i++) {
+        freq[(unsigned char)s[i]]++;
+    }
+
+    cout << endl;
+    for (int i = 0; i < k; i++) {
+        if (!appeared[(unsigned char)s[i]]) {
+            appeared[(unsigned char)s[i]] = true;
+            cout << s[i] << ": " << freq[(unsigned char)s[i]] << endl;
+        }
+    }
+}
