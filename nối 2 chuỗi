@@ -1,0 +1,52 @@
+//Giả sử 2 biến s1 và s2 chỉ lưu được tối đa 254 ký tự. Viết chương trình nhập 2 chuỗi ký tự s1 và s2. Viết hàm nối chuỗi s2 vào sau chuỗi s1.
+
+#include <iostream>
+#include <string>
+using namespace std;
+#define MAX 255
+
+int myStrlen(char s[]);
+bool myStrcat(char s1[], char s2[]);
+
+int main()
+{
+	char s1[MAX], s2[MAX];
+//	gets(s1);
+    cin.getline(s1,MAX);
+//	gets(s2);
+    cin.getline(s2,MAX);
+	bool kt = myStrcat(s1, s2);
+
+int lens1=myStrlen(s1);
+    int lens2=myStrlen(s2);
+if(kt==false){
+        cout<<"Khong noi duoc. Khong du bo nho."<<endl;
+    }
+    else{
+        char b[MAX];
+        for(int i=0;i<lens1;i++){
+            b[i]=s1[i];
+        }
+        for(int i=0;i<lens2;i++){
+            b[i+lens1]=s2[i];
+        }
+        b[lens1+lens2]='\0';
+        cout<<b;
+    }
+    return 0;
+}
+int myStrlen(char s[]){
+    int k=0;
+    while(s[k] != '\0'){
+        k++;
+    }
+    return k;
+}
+bool myStrcat(char s1[], char s2[]){
+    int lens1=myStrlen(s1);
+    int lens2=myStrlen(s2);
+    if((lens1+lens2+1)>MAX){
+        return false;
+    }
+    return true;
+}
